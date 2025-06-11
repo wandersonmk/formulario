@@ -176,7 +176,7 @@ const MentorshipForm = () => {
             Mentoria RW MasterClass
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            O futuro é de quem domina a IA! Empresas buscam gestores de fluxo para automatizar processos e liderar com inteligência. Participe da mentoria gratuita nesta quinta-feira e descubra como conquistar oportunidades e se destacar no mercado. Garanta sua vaga!
+            O futuro é de quem domina a IA! Empresas buscam gestores de fluxo para automatizar processos e liderar com inteligência. Participe da mentoria gratuita e descubra como conquistar oportunidades e se destacar no mercado. Garanta sua vaga!
           </p>
           <div className="mt-4">
             <Button
