@@ -96,6 +96,7 @@ const MentorshipForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isLoading) return; // Bloqueia duplo clique
     // Validação básica
     if (!isFormValid) {
       toast({
@@ -105,7 +106,6 @@ const MentorshipForm = () => {
       });
       return;
     }
-
     setIsLoading(true);
     try {
       await fetch('https://n8n-n8n-start.ym5qed.easypanel.host/webhook/mentoria', {
@@ -130,13 +130,7 @@ const MentorshipForm = () => {
           }
         }),
       });
-
-      toast({
-        title: "Inscrição enviada!",
-        description: "Sua candidatura para a mentoria foi enviada com sucesso. Entraremos em contato em breve!",
-      });
-
-      // Reset form
+      // Reset form só após o envio
       setFormData({
         name: '',
         whatsapp: '',
@@ -150,7 +144,10 @@ const MentorshipForm = () => {
         acceptTimeCommitment: false,
         acceptGroupParticipation: false
       });
-
+      toast({
+        title: "Inscrição enviada!",
+        description: "Sua candidatura para a mentoria foi enviada com sucesso. Entraremos em contato em breve!",
+      });
       // Redirecionar para página de parabéns
       navigate("/parabens");
     } catch (error) {
@@ -203,7 +200,7 @@ const MentorshipForm = () => {
                     <Clock className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-xl font-bold text-blue-800 mb-2">Encontro Exclusivo</CardTitle>
-                  <CardDescription className="text-blue-700 font-medium">Encontro dia 12/06/2025 (quinta-feira) - Mentoria gratuita</CardDescription>
+                  <CardDescription className="text-blue-700 font-medium">Encontro dia 13/06/2025 às 19h00 - Mentoria gratuita</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center pt-2">
                   <p className="text-lg text-blue-800 mb-3">Venha participar do nosso encontro exclusivo e descubra como transformar sua carreira!</p>
