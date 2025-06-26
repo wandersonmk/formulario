@@ -114,17 +114,7 @@ const MentorshipForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          nome: formData.name,
-          whatsapp: formData.whatsapp,
-          interesse: formData.interest,
-          trabalhoAtual: formData.currentJob,
-          tipoTrabalho: formData.workType,
-          donoEmpresa: formData.businessOwner,
-          cidade: formData.city,
-          motivacao: formData.motivation,
-          aceitaFrequencia: formData.acceptFrequency,
-          aceitaTempoComprometimento: formData.acceptTimeCommitment,
-          aceitaGrupo: formData.acceptGroupParticipation,
+          ...formData,
           dataEnvio: new Date().toISOString()
         }),
       });
