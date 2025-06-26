@@ -114,20 +114,18 @@ const MentorshipForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          mentorship_application: {
-            nome: formData.name,
-            telefone_whatsapp: formData.whatsapp,
-            interesse_mentoria: formData.interest,
-            trabalho_atual: formData.currentJob,
-            tipo_trabalho: formData.workType,
-            dono_empresa: formData.businessOwner,
-            cidade: formData.city,
-            motivacao: formData.motivation,
-            aceita_frequencia: formData.acceptFrequency,
-            aceita_tempo_comprometimento: formData.acceptTimeCommitment,
-            aceita_grupo: formData.acceptGroupParticipation
-          }
+          nome: formData.name,
+          whatsapp: formData.whatsapp,
+          interesse: formData.interest,
+          trabalhoAtual: formData.currentJob,
+          tipoTrabalho: formData.workType,
+          donoEmpresa: formData.businessOwner,
+          cidade: formData.city,
+          motivacao: formData.motivation,
+          aceitaFrequencia: formData.acceptFrequency,
+          aceitaTempoComprometimento: formData.acceptTimeCommitment,
+          aceitaGrupo: formData.acceptGroupParticipation,
+          dataEnvio: new Date().toISOString()
         }),
       });
       // Reset form só após o envio
